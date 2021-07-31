@@ -17,6 +17,8 @@ jobs:
           command: |
              sudo snap install --edge gh
              sudo snap connect gh:ssh-keys
+      - run:
+          name: GH Login
+          command: |
              gh auth login --with-token < $(echo $GH_TOKEN)
-
       
