@@ -13,9 +13,10 @@ jobs:
             git config --global user.email lev@levlaz.org
             sudo update-alternatives --set editor /usr/bin/vim.basic
       - run:
-          name: Configure GH CLI
+          name: Install GH CLI
           command: |
-             sudo snap install --edge gh && sudo snap connect gh:ssh-keys
-             gh auth login --with-token $GH_TOKEN
+             sudo snap install --edge gh
+             sudo snap connect gh:ssh-keys
+             gh auth login --with-token < $(echo $GH_TOKEN)
 
       
