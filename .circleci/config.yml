@@ -4,8 +4,10 @@ jobs:
     machine:
       image: ubuntu-1604:202007-01
     steps:
+      - checkout
       - run: |
           cp .vimrc ~/.vimrc
           git config --global user.name "Lev Lazinskiy"
           git config --global user.email lev@levlaz.org
+          sudo update-alternatives --set editor /usr/bin/vim.basic
       
